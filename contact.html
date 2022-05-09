@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <title>Uncle Ong Bakery</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+    <link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+    <link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+    <link rel="stylesheet" href="plugins/devices.min.css">
+    <link rel="stylesheet" href="plugins/whatsapp-click-to-chat/venom-button.min.css">
+
+
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/zy.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+    <!-- jQuery -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/aos/aos.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="plugins/date-picker/datepicker.min.js"></script>
+    <script src="plugins/clock-picker/clockpicker.min.js"></script>
+    <script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+    <script src="plugins/swiper/swiper.min.js"></script>
+    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="plugins/google-map/gmap.js"></script>
+    <script src="plugins/whatsapp-click-to-chat/venom-button.min.js"></script>
+
+
+</head>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/5f56eb714704467e89ecf1b8/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
+<body>
+    <div class="preloader">
+        <img src="images/preloader.gif" alt="preloader" class="img-fluid">
+    </div>
+
+    <!-- Header Start -->
+    <header class="navigation ">
+        <nav class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100" id="main-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/favicon.png" alt="" class="img-fluid">
+                </a>
+
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span>
+			</button>
+
+                <audio id="myaudio" autoplay loop preload>
+				<source src="video/music.mp3" type="audio/mpeg">
+					<source src="video/ogg" type="audio/ogg">
+			</audio>
+
+                <button class="btn btn-main" onclick="play()" type="button">Music</button>
+				<button class="btn btn-main" onclick="stop()" type="button">Pause</button>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cart</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Header Close -->
+    
+    <section class="section-header bg-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center getintouch text-capitalize mb-4 font-lg">
+                        <span>Get in</span>
+                        <div class="getintouch-1">
+                            </br><span>Touch</span>
+                        </div>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact form start -->
+    <section class="contact-form-wrap section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center ">
+                    <span class="text-primary font-extra font-md"><br>Contact us</span>
+                    <h2 class="mb-4">Keep in touch with us</h2>
+                    <h3 class="hearing mb-4">
+                        <p>We would like to hear from you!</p>
+                        <p>Just drop us an email to get more information or let us know how we did!</p>
+                        <p>Keep in touch with us! We will serve our customers in better ways!</p>
+                    </h3>
+
+                    <form id="contact-form" class="contact__form" method="post" action="mail.php" autocomplete="off">
+
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <p></p>
+                                <input name="name" type="text" class="form-control" placeholder="Your Name" id="name"
+                                    required>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <p></p>
+                                <input name="email" type="email" class="form-control" placeholder="Email Address"
+                                    id="email" placeholder="xxxxx@gmail.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-lg-6">
+                                <input name="phone" type="text" class="form-control" placeholder="Phone Number"
+                                    id="phone" placeholder="012-1234567">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input name="subject" type="text" class="form-control" placeholder="Subject"
+                                    id="subject">
+                            </div>
+                        </div>
+
+                        <div class="form-group-2 mb-4">
+                            <textarea name="message" class="form-control" rows="8" placeholder="Your Message"
+                                id="message" required></textarea>
+                        </div>
+                        <button class="btn btn-main" name="submit" type="submit">Send Message</button>
+                    </form>
+                    <div class="banner center">
+                        <video autoplay loop muted class="banner__video" poster="video/tenor.gif" width="250"
+                            height="200">
+                            <source src="video/tenor.gif" type="video/webm">
+                            <source src="video/tenor.gif" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="qr center">
+                        <span class="text-primary font-extra font-md">Scan me to email to Uncle Ong Bakery! </span>
+                        <img src="images/qrcode.png" alt="qrcode to email to Uncle Ong Bakery" height="150" width="150">
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!--Google Map-->
+    <section class="text-center">
+        <span class="text-primary font-extra font-md"><br>My Location<br></span>
+        <button class="btn btn-main" onclick="todayDate()" id="date">Checkout Date</button>
+        <button class="btn btn-main" onclick="getWeatherNight()" id="weather1">Checkout Current Weather at
+            Kampar</button>
+        <button class="btn btn-main" onclick="getWeatherMorning()" id="weather2">Checkout Current Weather at Malim
+            Nawar</button>
+        <div class="text-center">
+            <h4>Night Market</h4><iframe width="100%" height="500px"
+                src="https://maps.google.com/maps?q=Pasar%20Malam%20Taman%20Bandar%20Baru%20Kampar&t=&z=19&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+        <div class="text-center">
+            <h4>Morning Market</h4><iframe width="100%" height="500px"
+                src="https://maps.google.com/maps?q=Pasar%20Awam%20Malim%20Nawar&t=&z=17&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+    </section>
+
+
+    <footer class="section footer">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+                    <div class="widget">
+                        <h4 class="mb-3">About</h4>
+                        <p>Uncle Ong Bakery is a modern homestyle bakery that delivery happiness.</p>
+
+                        <ul class="list-inline footer-socials mt-4">
+                            <li class="list-inline-item"><a href="contact.html"><i class="ti-facebook mr-2"></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
+                                        class="ti-twitter mr-2 "></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="https://github.com/themefisher/"><i
+                                        class="ti-github mr-2 "></i></a>
+                            </li>
+                            <li class="list-inline-item"><a href="https://dribbble.com/themefisher/"><i
+                                        class="ti-dribbble mr-2 "></i></a></li>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+                    <div class="widget">
+                        <h4 class="mb-3">Contact Info</h4>
+
+                        <ul class="list-unstyled mb-0 footer-contact">
+                            <li><i class="ti-mobile"></i>+605- 6915351</li>
+                            <li><i class="ti-email"></i>uncleongbakery@support.com</li>
+                            <li><i class="ti-map"></i>271, Jalan Perak 9, 31900 Kampar, Negeri Perak （Night Market)</li>
+                            <li><i class="ti-map"></i>31700 Malim Nawar, Perak （Morning Market)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                    <div class="widget">
+                        <h4 class="mb-3">Opening Hours</h4>
+
+                        <div class="info mb-4">
+                            <p class="mb-0">Monday - Saturday (Night Market)</p>
+                            <h5>05:30 PM - 11:00 PM</h5>
+                        </div>
+                        <div class="info">
+                            <p class="mb-0">Sunday - Friday (Morning Market)</p>
+                            <h5>06: 00 AM - 10:00 AM</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6 text-center">
+                    <h4 class="text-white-50 mb-3">Get the new product at your inbox</h4>
+                    <form action="#" class="footer-newsletter">
+                        <div class="form-group">
+                            <button class="button"><span class="ti-email"></span></button>
+                            <input type="email" class="form-control" placeholder="xxxx@gmail.com" id="mail">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section>
+        <div>
+            <div id="myButton"></div>
+        </div>
+    </section>
+
+    <!--Calendar-->
+    <script>
+        function todayDate() {
+            var today = new Date();
+            var day = today.getDate();
+            var month = today.getMonth();
+            var year = today.getFullYear();
+            var curDate = day + "/" + (month + 1) + "/" + year;
+            document.getElementById("date").innerHTML = curDate;
+        }
+    </script>
+
+    <!--Weather for night market-->
+    <script>
+        function getWeatherNight() {
+            var aPI = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?aggregateHours=1&combinationMethod=aggregate&contentType=json&unitGroup=us&locationMode=array&key=M22QPV5MG0ATVQQLL1BJIQANZ&dataElements=default&locations=kampar%20malaysia";
+            $.getJSON(aPI).done(function (place) {
+                for (var i in place.locations[0].values) {
+                    var now = new Date(Date.now());
+                    var curtime = now.getHours();
+                    var curdate = now.getDate();
+                    var hours = new Date(place.locations[0].values[i].datetimeStr).getHours();
+                    var dates = new Date(place.locations[0].values[i].datetimeStr).getDate();
+                    if (dates == curdate) {
+                        if (hours == curtime) {
+                            var date = new Date(place.locations[0].values[i].datetimeStr);
+                            $("#weather1").html("Kampar (Night Market)" + "<br>Temperature: " + ((place.locations[0].values[i].temp - 32) * 5 / 9).toFixed(2) + "°C" + "<br>Conditions: " + place.locations[0].values[i].conditions);
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <!--Weather for morning market with different aPI-->
+    <script>
+        function getWeatherMorning() {
+            var aPI = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/forecast?aggregateHours=1&combinationMethod=aggregate&contentType=json&unitGroup=us&locationMode=array&key=M22QPV5MG0ATVQQLL1BJIQANZ&dataElements=default&locations=malimnawar%20malaysia";
+            $.getJSON(aPI).done(function (place) {
+                for (var i in place.locations[0].values) {
+                    var now = new Date(Date.now());
+                    var curtime = now.getHours();
+                    var curdate = now.getDate();
+                    var hours = new Date(place.locations[0].values[i].datetimeStr).getHours();
+                    var dates = new Date(place.locations[0].values[i].datetimeStr).getDate();
+                    if (dates == curdate) {
+                        if (hours == curtime) {
+                            var date = new Date(place.locations[0].values[i].datetimeStr);
+                            $("#weather2").html("Malim Nawar (Night Market)" + "<br>Temperature: " + ((place.locations[0].values[i].temp - 32) * 5 / 9).toFixed(2) + "°C" + "<br>Conditions: " + place.locations[0].values[i].conditions);
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+    <!--Audio-->
+    <script>
+        var sound = document.getElementById("myaudio");
+
+        function play() {
+            sound.play();
+        };
+
+        function stop() {
+            sound.pause();
+        };
+    </script>
+
+    <!--Whatapps web-->
+    <script>
+        $(function () {
+            $('#myButton').venomButton({
+                phone: '+601135224980',
+                chatMessage: 'Uncle Ong Bakery',
+                message: "Can I know more about Uncle Ong Bakery?",
+                linkButton: true,
+                showOnIE: false,
+                showPopup: true,
+                headerTitle: 'Uncle Ong Bakery',
+                backgroundColor: '#25D366',
+                headerColor: '#128C7E',
+            });
+        });
+    </script>
+
+
+    <!--local Storage-->
+    <script>
+        var na = document.getElementById("name");
+        var em = document.getElementById("email");
+        var ph = document.getElementById("phone");
+        var su = document.getElementById("subject");
+        var me = document.getElementById("message");
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var naming = na.value;
+            var emailing = em.value;
+            var phoning = ph.value;
+            var subjecting = su.value;
+            var messaging = me.value;
+
+            if (!check(naming, emailing, phoning, subjecting, messaging)) {
+                return alert("Duplicate entry! Please try again.");
+            }
+
+            na.innerText = naming;
+            em.innerText = emailing;
+            ph.innerText = phoning;
+            su.innerText = subjecting;
+            me.innerText = messaging;
+
+            var newitem = {
+                name: naming,
+                email: emailing,
+                phone: phoning,
+                subject: subjecting,
+                message: messaging
+            }
+            save(newitem);
+        });
+
+        function check(naming, emailing, phoning, subjecting, messaging) {
+            var cached = localStorage.getItem("contact");
+            if (cached == null) return true;
+            var items = JSON.parse(cached);
+            for (const item of items) {
+                if (naming == item.name && emailing == item.email && phoning == item.phone && subjecting == item.subject && messaging == item.message) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function save(new_item) {
+            var cached = localStorage.getItem("contact");
+            if (cached == null) {
+                localStorage.setItem("contact", JSON.stringify([new_item]));
+                return;
+            };
+
+            var items = JSON.parse(cached);
+            items.push(new_item);
+            cached = JSON.stringify(items);
+            localStorage.setItem("contact", cached);
+        }
+
+        var cache = localStorage.getItem("contact");
+        var list = JSON.parse(cache);
+    </script>
+
+    <!-- Main Script -->
+    <script src="js/contact.js"></script>
+    <script src="js/script.js"></script>
+
+</html>

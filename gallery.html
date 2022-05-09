@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<title>Uncle Ong - Gallery</title>
+
+	<!-- mobile responsive meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- ** Plugins Needed for the Project ** -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+	<link rel="stylesheet" href="plugins/aos/aos.css">
+	<link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+	<link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+	<link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+	<link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+	<link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+	<link rel="stylesheet" href="plugins/devices.min.css">
+
+	<!-- Main Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+	<style>
+		.panel .front {
+			height: inherit;
+			position: absolute;
+			top: 0;
+			z-index: 900;
+			text-align: center;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-webkit-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+
+		.panel .back {
+			height: inherit;
+			position: absolute;
+			top: 0;
+			z-index: 1000;
+			-webkit-transform: rotateY(-180deg);
+			-moz-transform: rotateY(-180deg);
+			-webkit-transform-style: preserve-3d;
+			-moz-transform-style: preserve-3d;
+			-webkit-backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-webkit-transition: all .4s ease-in-out;
+			-moz-transition: all .4s ease-in-out;
+			-ms-transition: all .4s ease-in-out;
+			-o-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
+		}
+
+		.panel.flip .front {
+			z-index: 900;
+			-webkit-transform: rotateY(180deg);
+			-moz-transform: rotateY(180deg);
+		}
+
+		.panel.flip .back {
+			z-index: 1000;
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			-moz-transform: rotateX(0deg) rotateY(0deg);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="images/preloader.gif" alt="preloader" class="img-fluid">
+	</div>
+	<!-- Header Start -->
+
+    <header class="navigation ">
+        <nav class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100" id="main-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/favicon.png" alt="" class="img-fluid">
+                </a>
+
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span>
+			</button>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cart</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+                                <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+	<!-- Header Close -->
+	
+	<section class="section-header bg-1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="text-center">
+						<h1 class="text-capitalize mb-4 font-lg text-white">Our Gallery</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section video-gallery">
+		<div class="container">
+			<div class="row  justify-content-center mb-5">
+				<div class="col-lg-8 text-center">
+					<span class="text-primary font-extra font-md text-capitalize">our gallery</span>
+					<h2 class="mt-3 mb-4">Awesome Baked goods that you may not miss out!</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6">
+					<div class="video-item mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="00">
+						<img src="images/gallery/img-1.jpg" alt="" class="img-fluid">
+						<a data-video-id="5X6JZLnP0kU" class="videoplay"><i class="ti-control-play"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="video-item mb-5 mb-lg-0" data-aos="fade-up" data-aos-delay="300">
+						<img src="images/gallery/img-1.jpg" alt="" class="img-fluid">
+						<a data-video-id="A6OPrLUm3jQ" class="videoplay"><i class="ti-control-play"></i></a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+					<div class="video-item">
+						<img src="images/gallery/img-1.jpg" alt="" class="img-fluid">
+						<a data-video-id="59ybO_u8D-0" class="videoplay"><i class="ti-control-play"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="section img-gallery border-top">
+		<div class="container">
+			<div class="row mb-5 align-items-center">
+				<div class="col-lg-4 text-center">
+					<h2 class="mt-3 mb-4">Lets check out some more</h2>
+				</div>
+				<div class="col-lg-8">
+					<p>We value our customers by providing best quality products to every customers. All of the products
+						are freshly baked everyday! Thank for supporting Uncle Ong Bakery in all the way!</p>
+				</div>
+				<div class="container align-items-center">
+					<div class="row">
+						<div class="col hover panel">
+							<a class="front" href="images/gallery/img-2.jpg">
+								<img src="images/gallery/img-2.jpg" alt="" class="img-fluid">
+							</a>
+							<a class="back" href="images/gallery/img-3.jpg">
+								<img src="images/gallery/img-3.jpg" alt="" class="img-fluid">
+							</a>
+						</div>
+						<div class="col hover panel">
+							<a class="front" href="images/gallery/img-4.jpg">
+								<img src="images/gallery/img-4.jpg" alt="" class="img-fluid">
+							</a>
+							<a class="back" href="images/gallery/img-5.jpg">
+								<img src="images/gallery/img-5.jpg" alt="" class="img-fluid">
+							</a>
+						</div>
+						<div class="col hover panel">
+							<a class="front" href="images/gallery/img-6.jpg">
+								<img src="images/gallery/img-6.jpg" alt="" class="img-fluid">
+							</a>
+							<a class="back" href="images/gallery/img-7.jpg">
+								<img src="images/gallery/img-7.jpg" alt="" class="img-fluid">
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</section>
+
+	<section class="section">
+		<div class="col-mt-center mb-4 text-center">
+			<h2>Check out our physical stall!</h2>
+		</div>
+		<div class="container align-items-center">
+			<div class="row">
+				<div class="col text-center">
+					<p><strong>Kampar New Town Night Market </strong>(Mon - Sat)</p>
+					<h5>Operation Time: 5.30PM - 11.00PM</h5>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509241.5836251314!2d100.8592798730196!3d4.326282163244698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb1d1555555555%3A0x6654374ef9992595!2sPasar%20Malam%20Taman%20Bandar%20Baru%20Kampar!5e0!3m2!1sen!2smy!4v1599559980733!5m2!1sen!2smy"
+						width="500" height="350" frameborder="0" style="border:0;" allowfullscreen=""
+						aria-hidden="false" tabindex="0"></iframe>
+				</div>
+
+				<div class="col text-center">
+					<p><strong>Malim Nawar Morning Market </strong>(Sun - Fri)</p>
+					<h5>Operation Time: 6.00AM - 10.00AM</h5>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3978.2797795562924!2d101.121324!3d4.358542!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfb00978056b3a643!2sPasar%20Awam%20Malim%20Nawar!5e0!3m2!1sen!2sus!4v1599579407597!5m2!1sen!2sus"
+						width="500" height="350" frameborder="0" style="border:0;" allowfullscreen=""
+						aria-hidden="false" tabindex="0"></iframe>
+				</div>
+			</div>
+			<div class="col-mt-center pt-4 text-center">
+				<h2 class="col-m-6 mt-3 mb-4">Share our page to let more know about us!</h2>
+				<div class="d-flex align-items-center justify-content-center">
+					<img src="images/gallery/facebook.png" style="width: 50px; height: 50px;" class="rounded-circle"
+						alt="facebook">&nbsp;
+					<div class="fb-like" data-href="https://uccd2223-dingdong.azurewebsites.net/" data-width=""
+						data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+				</div>
+
+			</div>
+	</section>
+
+	<footer class="section footer">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">About</h4>
+						<p>Uncle Ong Bakery is a modern homestyle bakery that delivery happiness.</p>
+
+						<ul class="list-inline footer-socials mt-4">
+							<li class="list-inline-item"><a href="https://www.facebook.com/"><i
+										class="ti-facebook mr-2"></i></a></li>
+							<li class="list-inline-item"><a href="https://twitter.com/"><i
+										class="ti-twitter mr-2 "></i></a>
+							</li>
+							<li class="list-inline-item"><a href="https://github.com/"><i
+										class="ti-github mr-2 "></i></a>
+							</li>
+							<li class="list-inline-item"><a href="https://dribbble.com/"><i
+										class="ti-dribbble mr-2 "></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">Contact Info</h4>
+
+						<ul class="list-unstyled mb-0 footer-contact">
+							<li><i class="ti-mobile"></i>+605- 6915351</li>
+							<li><i class="ti-email"></i>uncleongbakery@support.com</li>
+							<li><a href="https://goo.gl/maps/6iqsTGKbpFEwCzaW8" style="color:grey"><i
+										class="ti-map"></i>271, Jalan Perak 9, 31900 Kampar, Negeri Perak （Night
+									Market)</a></li>
+							<li><a href="https://goo.gl/maps/Eeb4r8SMVNSGTfSS9" style="color:grey"><i
+										class="ti-map"></i>31700 Malim Nawar, Perak （Morning Market)</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+					<div class="widget">
+						<h4 class="mb-3">Opening Hours</h4>
+
+						<div class="info mb-4">
+							<p class="mb-0">Monday - Saturday (Night Market)</p>
+							<h5>05:30 PM - 11:00 PM</h5>
+						</div>
+						<div class="info">
+							<p class="mb-0">Sunday - Friday (Morning Market)</p>
+							<h5>06: 00 AM - 10:00 AM</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row justify-content-center mt-5">
+				<div class="col-lg-6 text-center">
+					<h4 class="text-white-50 mb-3">Get the new product at your inbox</h4>
+					<form action="#" class="footer-newsletter">
+						<div class="form-group">
+							<button class="button"><span class="ti-email"></span></button>
+							<input type="email" class="form-control" placeholder="xxxx@gmail.com" id="mail">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery -->
+	<script src="plugins/jQuery/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/aos/aos.js"></script>
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+	<script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+	<script src="plugins/date-picker/datepicker.min.js"></script>
+	<script src="plugins/clock-picker/clockpicker.min.js"></script>
+	<script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+	<script src="plugins/swiper/swiper.min.js"></script>
+	<script src="plugins/instafeed/instafeed.min.js"></script>
+	<script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+
+	<!-- Main Script -->
+	<script src="js/contact.js"></script>
+	<script src="js/script.js"></script>
+	<div id="fb-root"></div>
+	<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ms_MY/sdk.js#xfbml=1&version=v8.0"
+		nonce="qISMnnp0"></script>
+
+	<script>
+		$(document).ready(function () {
+			// set up hover panels
+			// although this can be done without JavaScript, we've attached these events
+			// because it causes the hover to be triggered when the element is tapped on a touch device
+			$('.hover').hover(function () {
+				$(this).addClass('flip');
+			}, function () {
+				$(this).removeClass('flip');
+			});
+		});
+	</script>
+
+</html>

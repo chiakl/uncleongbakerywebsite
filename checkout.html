@@ -1,0 +1,300 @@
+<!DOCTYPE html manifest="/example.appcache">
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <title>Uncle Ong's Bakery Checkout</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+    <link rel="stylesheet" href="plugins/fontawesome/css/all.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+    <link rel="stylesheet" href="plugins/magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="plugins/video-popup/modal-video.min.css">
+    <link rel="stylesheet" href="plugins/swiper/swiper.min.css">
+    <link rel="stylesheet" href="plugins/date-picker/datepicker.min.css">
+    <link rel="stylesheet" href="plugins/clock-picker/clockpicker.min.css">
+    <link rel="stylesheet" href="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.css">
+    <link rel="stylesheet" href="plugins/devices.min.css">
+
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/kylinstyle.css" rel="stylesheet">
+    <link href="css/checkout.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <script src="https://cdn.gravitec.net/storage/b7d83b29c12bb773bd3eebf6b0b64791/client.js" async></script>
+</head>
+
+<body>
+    <div class="preloader">
+        <img src="images/preloader.gif" alt="preloader" class="img-fluid">
+    </div>
+
+    <!-- Header Start -->
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v8.0" nonce="ug1Fzg37"></script>
+
+    <header class="navigation ">
+        <nav class="navbar navbar-expand-lg main-nav py-lg-3 position-absolute w-100" id="main-nav">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/favicon.png" alt="" class="img-fluid">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navigation"
+                    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Cart</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="cart.html">Cart</a></li>
+                                <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="wishlist.html">Wishlist</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header Close -->
+    <section class="section-header bg-1">
+        <div class="container">
+            <div>
+            <audio controls autoplay loop id="player" style="width:3-0px;height:32px">
+                <source src="video/pricetag.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center">
+                        <h1 class="text-capitalize mb-4 font-lg text-white" id="pagename">Checkout</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card rainbow-card" style="max-width: 48rem;margin: 3rem auto;">
+            <div class="card-body">
+                <h5 class="card-title">Welcome to checkout page.</h5>
+                <p class="card-text">The system has recorded your cart items.</p>
+                <div class="d-flex card-menu">
+                    <a href="#!" class="btn btn-sm btn-flat" onclick="window.location.href='menu.html'">I still want to browse.</a>
+                    <a href="#!" class="btn btn-sm btn-primary" onclick="confirmgo()">Yes, I decided to proceed.</a>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div id="token"></div>
+        <div id="msg"></div>
+        <div id="notis"></div>
+        <div id="err"></div>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-messaging.js"></script>
+        <script>
+            MsgElem = document.getElementById("msg");
+            TokenElem = document.getElementById("token");
+            NotisElem = document.getElementById("notis");
+            ErrElem = document.getElementById("err");
+            // Initialize Firebase
+            // TODO: Replace with your project's customized code snippet
+            var config = {
+                apiKey: "AIzaSyBWDNKdVrF0j0nTGPOr4jDnHo59dVxBl5g",
+                authDomain: "test-f4a1e.firebaseapp.com",
+                databaseURL: "https://test-f4a1e.firebaseio.com",
+                projectId: "test-f4a1e",
+                storageBucket: "test-f4a1e.appspot.com",
+                messagingSenderId: "1013916114339",
+                appId: "1:1013916114339:web:1965ccbc74de240483ce16",
+                measurementId: "G-H9EY4PGYFH"
+            };
+            firebase.initializeApp(config);
+
+            const messaging = firebase.messaging();
+            messaging.usePublicVapidKey("ct_Ax1dATlARtvy2wtZ6Ap:APA91bGHz5-c2JGR-5sT5uZL4ZYVwCv_IaHD8jI0xhhUeFQKAuAoEXHF3AdtDLojdO3NIfyDtztZW4kxWRXrVaVWJHhkG-8dmephIcwpwCXxJ_bgvQClsAw4G24jsVMgC3zaSnV-ZYqj");
+            messaging
+                .requestPermission()
+                .then(function () {
+                    MsgElem.innerHTML = "Notification permission granted."
+                    console.log("Notification permission granted.");
+
+                    // get the token in the form of promise
+                    return messaging.getToken()
+                })
+                .then(function (token) {
+                    //TokenElem.innerHTML = "token is : " + token
+                    console.log(token);
+                })
+                .catch(function (err) {
+                    //ErrElem.innerHTML = ErrElem.innerHTML + "; " + err
+                    console.log("Unable to get permission to notify.", err);
+                });
+        </script>
+
+    </section>
+
+
+    <div class="stars"></div>
+    <div class="ocean">
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <footer class="section footer">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+                        <h4 class="mb-3">
+                            <p>Our location:</p>
+                        </h4>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254620.66370737288!2d100.99938820216613!3d4.326663191988005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cb1d1555555555%3A0x6654374ef9992595!2sPasar%20Malam%20Taman%20Bandar%20Baru%20Kampar!5e0!3m2!1sen!2sus!4v1599908842717!5m2!1sen!2sus"
+                            width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="fb-comments" data-href="https://assignmenttt.azurewebsites.net/checkout.html" data-numposts="5" data-width="950" position="center"></div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-3 mb-5 mb-lg-0">
+                        <div class="widget" id="socialwidget">
+                            <h4 class="mb-3">About</h4>
+                            <p>Uncle Ong Bakery is a modern homestyle bakery that delivery happiness.</p>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="fab fa-facebook-f"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="fab fa-twitter"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="fab fa-instagram"></span>
+                                    </a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 ml-auto col-md-5 mb-5 mb-lg-0">
+                        <div class="widget">
+                            <h4 class="mb-3">Contact Info</h4>
+    
+                            <ul class="list-unstyled mb-0 footer-contact">
+                                <li><i class="ti-mobile"></i>+605- 6915351</li>
+                                <li><i class="ti-email"></i>uncleongbakery@support.com</li>
+                                <li><i class="ti-map"></i>271, Jalan Perak 9, 31900 Kampar, Negeri Perak （Night Market)</li>
+                                <li><i class="ti-map"></i>31700 Malim Nawar, Perak （Morning Market)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                        <div class="widget">
+                            <h4 class="mb-3">Opening Hours</h4>
+    
+                            <div class="info mb-4">
+                                <p class="mb-0">Monday - Saturday (Night Market)</p>
+                                <h5>05:30 PM - 11:00 PM</h5>
+                            </div>
+                            <div class="info">
+                                <p class="mb-0">Sunday - Friday (Morning Market)</p>
+                                <h5>06: 00 AM - 10:00 AM</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-6 text-center">
+                        <h4 class="text-white-50 mb-3">Get the new product at your inbox</h4>
+                        <form action="#" class="footer-newsletter">
+                            <div class="form-group">
+                                <button class="button"><span class="ti-email"></span></button>
+                                <input type="email" class="form-control" placeholder="xxxx@gmail.com" id="mail">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="https://uhchat.net/code.php?f=60297b"></script>
+                <script>
+                    function confirmgo()
+                    {
+                        var goto;
+                        var answer = window.confirm("Are you sure you want to proceed?");
+                        if(answer == true)
+                        {
+                            goto = window.location.href='delivery.html';
+                        }
+                        else
+                        {
+                            goto = "";
+                        }
+                    }
+                </script>
+            </div>
+        </footer>
+
+        <!-- jQuery -->
+        <script src="plugins/jQuery/jquery.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="plugins/bootstrap/bootstrap.min.js"></script>
+        <script src="plugins/aos/aos.js"></script>
+        <script src="plugins/shuffle/shuffle.min.js"></script>
+        <script src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="plugins/date-picker/datepicker.min.js"></script>
+        <script src="plugins/clock-picker/clockpicker.min.js"></script>
+        <script src="plugins/video-popup/jquery-modal-video.min.js"></script>
+        <script src="plugins/swiper/swiper.min.js"></script>
+        <script src="plugins/instafeed/instafeed.min.js"></script>
+        <script src="plugins/bootstrap-touchpin/jquery.bootstrap-touchspin.min.js"></script>
+
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+        <script src="plugins/google-map/gmap.js"></script>
+        <!-- Main Script -->
+        <script src="js/contact.js"></script>
+        <script src="js/script.js"></script>
+        <script src="js/checkout.js"></script>
+        <script src="js/push-worker.js"></script>
+        <srcipt src="js/cart.js"></srcipt>
+</html>
